@@ -10,4 +10,26 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# compinit autocomplete power
+autoload -Uz compinit && compinit
+
+# Plugines etc
+
+# NVM (Node Version Manger) https://github.com/lukechilds/zsh-nvm
+# Export nvm completion settings for zsh-nvm plugin before sourcing it
+export NVM_COMPLETION=true
+# Export custom home for nvm to have it not in my root
+export NVM_DIR="/Users/dominikgaller/Tools/.nvm"
+source ~/Tools/.zsh-nvm/zsh-nvm.plugin.zsh
+
+# Custom Scripts
+source ~/.my-scripts
+source ~/.my-aliases
+
+## Set the HomeBrew Ruby path to enable gem management
+## Notice: Before uninstalling Ruby one must check to remove the gems 
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/dominikgaller/Tools/sdkman"
+[[ -s "/Users/dominikgaller/Tools/sdkman/bin/sdkman-init.sh" ]] && source "/Users/dominikgaller/Tools/sdkman/bin/sdkman-init.sh"
