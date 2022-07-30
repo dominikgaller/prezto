@@ -1,1 +1,4 @@
+# ---------------------
+# THX Shell
+# ---------------------
 source $HOME/.thx-shell/shell/zsh/zshrc
