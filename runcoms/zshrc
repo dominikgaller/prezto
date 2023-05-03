@@ -2,3 +2,14 @@
 # THX Shell
 # ---------------------
 source $HOME/.thx-shell/shell/zsh/zshrc
+
+# ---------------------
+# THX Shell # osx
+# ---------------------
+source $THX_SHELL_HOME/macos/shell/macos-barell
+
+
+# ---------------------
+# THX Shell # esentri
+# ---------------------
+source $THX_SHELL_HOME/esentri/shell/esentri-barell
