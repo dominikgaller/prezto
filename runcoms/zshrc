@@ -1,13 +1,28 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# ---------------------
+# THX Shell # core
+# ---------------------
+source $HOME/.thx-shell/shell/zsh/zshrc
 
-# Customize to your needs...
+# ---------------------
+# THX Shell # osx
+# ---------------------
+source $THX_SHELL_HOME/macos/shell/macos-barrel.sh
+
+# ---------------------
+# THX Shell # newly installed brew packages on 2024-10-24
+#
+# btop - resource monitor
+# thefuck - fuck
+# fzf - fuzzy search
+# tldr - man pages for non-freaks
+# bat - cat for winners
+# 
+#
+# ---------------------
+eval $(thefuck --alias)
+source <(fzf --zsh)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/thorakz/Tools/sdkman"
+[[ -s "/Users/thorakz/Tools/sdkman/bin/sdkman-init.sh" ]] && source "/Users/thorakz/Tools/sdkman/bin/sdkman-init.sh"
